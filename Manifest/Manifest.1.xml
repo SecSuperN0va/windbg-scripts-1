@@ -1,6 +1,32 @@
 <?xml version='1.0' encoding='utf-8'?>
 <ExtensionPackages Version='1.0.0.0' Compression='none'>
     <ExtensionPackage>
+        <Name>Exception Handling (x64)</Name>
+        <Version>1.0.0.0</Version>
+        <Description>Dump Exception Handling Details for x64 Processes</Description>
+        <Components>
+            <ScriptComponent Name='ParseEh64' Type='Engine' File='..\parse_eh_win64\parse_eh_win64.js' FilePathKind='RepositoryRelative'>
+                <ObjectExtensionList>
+                    <NamedExtension Name="Debugger.Models.Process" />
+                    <NamedExtension Name="Debugger.Models.Module" />
+                </ObjectExtensionList>
+                <FunctionAliases>
+                    <FunctionAlias Name='ehhandlers'>
+                        <AliasItem>
+                            <Syntax>
+                                <![CDATA[!ehhandlers]]>
+                            </Syntax>
+                            <Description>
+                                <![CDATA[Dump Exception Handlers.]]>
+                            </Description>
+                        </AliasItem>
+                    </FunctionAlias>
+                </FunctionAliases>
+            </ScriptComponent>
+        </Components>
+    </ExtensionPackage>
+
+    <ExtensionPackage>
         <Name>Telescope</Name>
         <Version>1.0.0.1</Version>
         <Description>Telescope data dereference</Description>
